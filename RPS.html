@@ -21,22 +21,64 @@
 
  	  switch (random) {
  	  	case 1:
- 	  	console.log(rock);
+ 	  	result = rock;
  	  	break;
 
       case 2:
-      console.log(paper);
+      result = paper;
       break;
 
       case 3:
-      console.log(scissors);
+      result = scissors;
       break;
 
       default:
-      console.log(paper);
+      result = paper;
  	  }	
+ 	  return result;
  	}
  
+ function playRound(playerSelection, computerSelection) {
+	
+	if ((playerSelection === "Rock") && (computerSelection === "Scissors")) {
+		console.log("You won! Rock beats Scissors.");
+	
+	} else if ((playerSelection === "Scissors") && (computerSelection === "Rock")) {
+		console.log("You lose! Rock beats Scissors.");
+	
+	} else if ((playerSelection === "Rock") && (computerSelection === "Rock")) {
+	  console.log("Draw! Try again.");
+
+  } else if ((playerSelection === "Paper") && (computerSelection === "Rock")) {
+	  console.log("You won! Paper beats rock.");
+
+  } else if ((playerSelection === "Rock") && (computerSelection === "Paper")) {
+    console.log("You lose! Paper beats rock.");
+  
+  } else if ((playerSelection === "Paper") && (computerSelection === "Paper")) {
+    console.log("Draw! Try again.");	
+  
+  } else if ((playerSelection === "Scissors") && (computerSelection === "Paper")) {
+    console.log("You won! Scissors beats paper.");
+  
+  } else if ((playerSelection === "Paper") && (computerSelection === "Scissors")) {
+  	console.log("You lose! Scissors beats paper.");
+  
+  } else if ((playerSelection === "Scissors") && (computerSelection === "Scissors")) {
+  	console.log("Draw! Try again.");
+  
+  } else {
+  	console.log("Something goes wrong...");
+  }
+}
+
+const playerSelection = "Scissors";
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
+
+console.log("Comp selects: " + computerSelection);
+console.log("User selects: " + playerSelection);
+
  </script>
 <!-- your content will go there..  -->
  
