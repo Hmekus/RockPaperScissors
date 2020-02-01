@@ -8,21 +8,21 @@
 <body>
  
  <script type="text/javascript">
- 	
- 	const rock = "Rock";
- 	const paper = "Paper";
- 	const scissors = "Scissors";
- 	
- 	function computerPlay() {
- 	  let min = 1;
- 	  let max = 4;
+  
+  const rock = "Rock";
+  const paper = "Paper";
+  const scissors = "Scissors";
+  
+  function computerPlay() {
+    let min = 1;
+    let max = 4;
 
- 	  let random = Math.floor(Math.random() * (+max - +min)) + +min;
+    let random = Math.floor(Math.random() * (+max - +min)) + +min;
 
- 	  switch (random) {
- 	  	case 1:
- 	  	result = rock;
- 	  	break;
+    switch (random) {
+      case 1:
+      result = rock;
+      break;
 
       case 2:
       result = paper;
@@ -34,49 +34,49 @@
 
       default:
       result = paper;
- 	  }	
- 	  return result;
- 	}
+    } 
+    return result;
+  }
  
  function playRound(playerSelection, computerSelection) {
-	
-	let draw = "Draw! Try again.";
-	let rockW = "You won! Rock beats Scissors.";
-	let rockL = "You lose! Rock beats Scissors.";
-	let paperW = "You won! Paper beats rock.";
-	let paperL = "You lose! Paper beats rock.";
-	let scissorsW = "You won! Scissors beats paper.";
-	let scissorsL = "You lose! Scissors beats paper";
+  
+  let draw = "Draw! Try again.";
+  let rockW = "You won! Rock beats Scissors.";
+  let rockL = "You lose! Rock beats Scissors.";
+  let paperW = "You won! Paper beats rock.";
+  let paperL = "You lose! Paper beats rock.";
+  let scissorsW = "You won! Scissors beats paper.";
+  let scissorsL = "You lose! Scissors beats paper";
 
-	if ((playerSelection === "Rock") && (computerSelection === "Scissors")) {
-		return rockW;
-	
-	} else if ((playerSelection === "Scissors") && (computerSelection === "Rock")) {
-		return rockL;
-	
-	} else if ((playerSelection === "Rock") && (computerSelection === "Rock")) {
-	  return draw;
+  if ((playerSelection === "Rock") && (computerSelection === "Scissors")) {
+    return rockW;
+  
+  } else if ((playerSelection === "Scissors") && (computerSelection === "Rock")) {
+    return rockL;
+  
+  } else if ((playerSelection === "Rock") && (computerSelection === "Rock")) {
+    return draw;
 
   } else if ((playerSelection === "Paper") && (computerSelection === "Rock")) {
-	  return paperW;
+    return paperW;
 
   } else if ((playerSelection === "Rock") && (computerSelection === "Paper")) {
     return paperL;
   
   } else if ((playerSelection === "Paper") && (computerSelection === "Paper")) {
-    return draw;	
+    return draw;  
   
   } else if ((playerSelection === "Scissors") && (computerSelection === "Paper")) {
     return scissorsW;
   
   } else if ((playerSelection === "Paper") && (computerSelection === "Scissors")) {
-  	return scissorsL;
+    return scissorsL;
   
   } else if ((playerSelection === "Scissors") && (computerSelection === "Scissors")) {
-  	return draw;
+    return draw;
   
   } else {
-  	console.log("Something goes wrong...");
+    console.log("Something goes wrong...");
   }
 }
 
@@ -85,13 +85,13 @@ function capitalize(string) {
 }
 
 function game() {
-  let proMpt = prompt("Please enter your chose");
-  const playerSelection = capitalize(proMpt);
-  const computerSelection = computerPlay();
+  let userInput = prompt("Please enter your chose");
+  const playerSelection = capitalize(userInput);
 
-	for(let n = 0; n < 5; n++) {
-		console.log(playRound(playerSelection, computerSelection));
-	  console.log("Comp selects: " + computerSelection);
+  for(let n = 0; n < 5; n++) {
+    const computerSelection = computerPlay();
+    console.log(playRound(playerSelection, computerSelection));
+    console.log("Comp selects: " + computerSelection);
     console.log("User selects: " + playerSelection);
   }
 }
