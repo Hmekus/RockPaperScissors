@@ -84,13 +84,16 @@ function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
-const playerSelection = capitalize("rock");
+const playerSelection = capitalize("paper");
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
 
-console.log("Comp selects: " + computerSelection);
-console.log("User selects: " + playerSelection);
-
+function game() {
+	for(let n = 0; n < 5; n++) {
+		console.log(playRound(playerSelection, computerSelection));
+	  console.log("Comp selects: " + computerSelection);
+    console.log("User selects: " + playerSelection);
+  }
+}
  </script>
 <!-- your content will go there..  -->
  
