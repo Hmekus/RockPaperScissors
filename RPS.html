@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page title</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
  
+ <button id="rock">Rock</button>
+ <button id="paper">Paper</button>
+ <button id="scissors">Scissors</button>
+
+ <div class="result"></div>
+
  <script type="text/javascript">
   
   const rock = "Rock";
@@ -40,13 +46,13 @@
  
  function playRound(playerSelection, computerSelection) {
   
-  let draw = "Draw! Try again.";
-  let rockW = "You won! Rock beats Scissors.";
-  let rockL = "You lose! Rock beats Scissors.";
-  let paperW = "You won! Paper beats rock.";
-  let paperL = "You lose! Paper beats rock.";
-  let scissorsW = "You won! Scissors beats paper.";
-  let scissorsL = "You lose! Scissors beats paper";
+  const draw = "Draw! Try again.";
+  const rockW = "You won! Rock beats Scissors.";
+  const rockL = "You lose! Rock beats Scissors.";
+  const paperW = "You won! Paper beats rock.";
+  const paperL = "You lose! Paper beats rock.";
+  const scissorsW = "You won! Scissors beats paper.";
+  const scissorsL = "You lose! Scissors beats paper";
 
   if ((playerSelection === "Rock") && (computerSelection === "Scissors")) {
     return rockW;
@@ -80,23 +86,73 @@
   }
 }
 
-function capitalize(string) {
+/*function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}*/
+
+function rockGame() {
+  let playerSelection = "Rock";
+  const computerSelection = computerPlay();
+
+  const resultDiv = document.querySelector('.result');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+
+  p1.textContent = playRound(playerSelection, computerSelection);
+  p2.textContent = "User selects: " + playerSelection;
+  p3.textContent = "Comp selects: " + computerSelection;
+
+  resultDiv.appendChild(p1);
+  resultDiv.appendChild(p2);
+  resultDiv.appendChild(p3);
 }
 
-function game() {
-  let userInput = prompt("Please enter your chose");
-  const playerSelection = capitalize(userInput);
+function paperGame() {
+  let playerSelection = "Paper";
+  const computerSelection = computerPlay();
+  
+  const resultDiv = document.querySelector('.result');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
 
-  for(let n = 0; n < 5; n++) {
-    const computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
-    console.log("Comp selects: " + computerSelection);
-    console.log("User selects: " + playerSelection);
-  }
+  p1.textContent = playRound(playerSelection, computerSelection);
+  p2.textContent = "User selects: " + playerSelection;
+  p3.textContent = "Comp selects: " + computerSelection;
+
+  resultDiv.appendChild(p1);
+  resultDiv.appendChild(p2);
+  resultDiv.appendChild(p3);
 }
+
+function scissorsGame() {
+  let playerSelection = "Scissors";
+  const computerSelection = computerPlay();
+  
+  const resultDiv = document.querySelector('.result');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+
+  p1.textContent = playRound(playerSelection, computerSelection);
+  p2.textContent = "User selects: " + playerSelection;
+  p3.textContent = "Comp selects: " + computerSelection;
+
+  resultDiv.appendChild(p1);
+  resultDiv.appendChild(p2);
+  resultDiv.appendChild(p3);
+}
+
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
+
+rockBtn.addEventListener('click', rockGame);
+paperBtn.addEventListener('click', paperGame);
+scissorsBtn.addEventListener('click', scissorsGame);
+
  </script>
-<!-- your content will go there..  -->
  
 </body>
 </html>
