@@ -6,9 +6,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="rock">Rock</button>
-  <button id="paper">Paper</button>
-  <button id="scissors">Scissors</button>
+  <button id="Rock">Rock</button>
+  <button id="Paper">Paper</button>
+  <button id="Scissors">Scissors</button>
 
   <div class="result"></div>
 
@@ -84,13 +84,19 @@
       textResultGame.forEach((element) => resultGameDiv.appendChild(element));
     }
 
-    const rockBtn = document.querySelector('#rock');
+    /*const rockBtn = document.querySelector('#rock');
     const paperBtn = document.querySelector('#paper');
     const scissorsBtn = document.querySelector('#scissors');
+    const playerBtns = [rockBtn, paperBtn, scissorsBtn];*/
 
-    rockBtn.addEventListener('click', () => game(rock));
+    gameOptions.forEach((element) => {
+      const button = document.querySelector('#' + element);
+      button.addEventListener('click', () => game(element));
+    });
+
+    /*rockBtn.addEventListener('click', () => game(rock));
     paperBtn.addEventListener('click', () => game(paper));
-    scissorsBtn.addEventListener('click', () => game(scissors));
+    scissorsBtn.addEventListener('click', () => game(scissors));*/
   </script>
  </body>
 </html>
