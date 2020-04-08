@@ -16,10 +16,10 @@
     const rock = "Rock";
     const paper = "Paper";
     const scissors = "Scissors";
-    const computerOptions = [rock, paper, scissors];
+    const gameOptions = [rock, paper, scissors];
   
     function computerPlay() { 
-      return computerOptions[random()];
+      return gameOptions[random()];
     }
 
     function random(min = 0, max = 3) {
@@ -70,18 +70,18 @@
     function game(playerSelection) {
       const computerSelection = computerPlay();
 
-      const resultDiv = document.querySelector('.result');
-      const p1 = document.createElement('p');
-      const p2 = document.createElement('p');
-      const p3 = document.createElement('p');
+      const resultGameDiv = document.querySelector('.result');
+      const pRoundRPS = document.createElement('p');
+      const pUserSelect = document.createElement('p');
+      const pCompSelect = document.createElement('p');
 
-      p1.textContent = playRound(playerSelection, computerSelection);
-      p2.textContent = "User selects: " + playerSelection;
-      p3.textContent = "Comp selects: " + computerSelection;
+      pRoundRPS.textContent = playRound(playerSelection, computerSelection);
+      pUserSelect.textContent = "User selects: " + playerSelection;
+      pCompSelect.textContent = "Comp selects: " + computerSelection;
 
-      resultDiv.appendChild(p1);
-      resultDiv.appendChild(p2);
-      resultDiv.appendChild(p3);
+      let textResultGame = [pRoundRPS, pUserSelect, pCompSelect];
+
+      textResultGame.forEach((element) => resultGameDiv.appendChild(element));
     }
 
     const rockBtn = document.querySelector('#rock');
