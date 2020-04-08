@@ -84,19 +84,10 @@
       textResultGame.forEach((element) => resultGameDiv.appendChild(element));
     }
 
-    /*const rockBtn = document.querySelector('#rock');
-    const paperBtn = document.querySelector('#paper');
-    const scissorsBtn = document.querySelector('#scissors');
-    const playerBtns = [rockBtn, paperBtn, scissorsBtn];*/
-
     gameOptions.forEach((element) => {
       const button = document.querySelector('#' + element);
       button.addEventListener('click', () => game(element));
     });
-
-    /*rockBtn.addEventListener('click', () => game(rock));
-    paperBtn.addEventListener('click', () => game(paper));
-    scissorsBtn.addEventListener('click', () => game(scissors));*/
   </script>
  </body>
 </html>
