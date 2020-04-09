@@ -41,36 +41,36 @@
  function playRound(playerSelection, computerSelection) {
   
   let draw = "Draw! Try again.";
-  let rockW = "You won! Rock beats Scissors.";
-  let rockL = "You lose! Rock beats Scissors.";
-  let paperW = "You won! Paper beats rock.";
-  let paperL = "You lose! Paper beats rock.";
-  let scissorsW = "You won! Scissors beats paper.";
-  let scissorsL = "You lose! Scissors beats paper";
+  let playerRockWin = "You won! Rock beats Scissors.";
+  let playerRockLose = "You lose! Rock beats Scissors.";
+  let playerPaperWin = "You won! Paper beats rock.";
+  let playerPaperLose = "You lose! Paper beats rock.";
+  let playerScissorsWin = "You won! Scissors beats paper.";
+  let playerScissorsLose = "You lose! Scissors beats paper";
 
   if ((playerSelection === "Rock") && (computerSelection === "Scissors")) {
-    return rockW;
+    return playerRockWin;
   
   } else if ((playerSelection === "Scissors") && (computerSelection === "Rock")) {
-    return rockL;
+    return playerRockLose;
   
   } else if ((playerSelection === "Rock") && (computerSelection === "Rock")) {
     return draw;
 
   } else if ((playerSelection === "Paper") && (computerSelection === "Rock")) {
-    return paperW;
+    return playerPaperWin;
 
   } else if ((playerSelection === "Rock") && (computerSelection === "Paper")) {
-    return paperL;
+    return playerPaperLose;
   
   } else if ((playerSelection === "Paper") && (computerSelection === "Paper")) {
     return draw;  
   
   } else if ((playerSelection === "Scissors") && (computerSelection === "Paper")) {
-    return scissorsW;
+    return playerScissorsWin;
   
   } else if ((playerSelection === "Paper") && (computerSelection === "Scissors")) {
-    return scissorsL;
+    return playerScissorsLose;
   
   } else if ((playerSelection === "Scissors") && (computerSelection === "Scissors")) {
     return draw;
